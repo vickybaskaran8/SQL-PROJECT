@@ -1,0 +1,160 @@
+/*
+CREATE DATABASE EMP_PERFORMANCE;
+create table EMP_PERFORMANCE.Proj_table(PROJ_ID varchar(100),	PROJ_NAME varchar(100)  , DOMAIN varchar(100) ,	START_DATE varchar(100) , CLOSURE_DATE varchar(100) ,	DEV_QTR varchar(100) 	 , STATUS varchar(100) );
+insert into EMP_PERFORMANCE.Proj_table value 
+('P103',	'Drug Discovery',	'HEALTHCARE',	'04-06-2021',	'6/20/2021',	'Q1',	'DONE'),
+('P105',	'Fraud Detection',	'FINANCE',	'04-11-2021',	'6/25/2021',	'Q1',	'DONE'),
+('P208',	'Algorithmic Trading',	'FINANCE',	'01/16/2022',	'3/27/2022',	'Q4',	'YTS'),
+('P109',	'Market Basket Analysis',	'RETAIL',	'04-12-2021',	'6/30/2021',	'Q1',	'DELAYED'),
+('P204',	'Supply Chain Management',	'AUTOMOTIVE',	'07/15/2021',	'9/28/2021','Q2',	'WIP'),
+('P406',	'Customer Sentiment Analysis',	'RETAIL',	'07-09-2021',	'/24/2021',	'Q2',	'WIP'),
+('P302',	'Early Detection of Lung Cancer',	'HEALTHCARE',	'10-08-2021',	'12/18/2021',	'Q3',	'YTS'),
+('P201',	'Self Driving Cars',	'AUTOMOTIVE',	'01-12-2022',	'3/30/2022',	'Q4',	'YTS');
+
+create table EMP_PERFORMANCE.Data_science_team(EMP_ID varchar(100), FIRST_NAME varchar(100),	LAST_NAME varchar(100),	GENDER varchar(100), roles varchar(100),	DEPT varchar(100),	EXP varchar(100),	COUNTRY	varchar(100), CONTINENT varchar(100));
+insert into EMP_PERFORMANCE.Data_science_team value 
+('E260',	'Roy',	'Collins',	'M',	'SENIOR DATA SCIENTIST',	'RETAIL',	'7'	,'INDIA',	'ASIA'),
+('E245',	'Nian',	'Zhen',	'M',	'SENIOR DATA SCIENTIST',	'RETAIL',	'6',	'CHINA',	'ASIA'),
+('E620',	'Katrina',	'Allen',	'F',	'JUNIOR DATA SCIENTIST','RETAIL','2'	,'INDIA'	,'ASIA'),
+('E640',	'Jenifer',	'Jhones',	'F'	,'JUNIOR DATA SCIENTIST',	'RETAIL',	'1'	,'COLOMBIA'	,'SOUTH AMERICA'),
+('E403',	'Steve',	'Hoffman',	'M',	'ASSOCIATE DATA SCIENTIST',	'FINANCE',	'4',	'USA'	,'NORTH AMERICA'),
+('E204',	'Karene',	'Nowak'	,'F',	'SENIOR DATA SCIENTIST'	,'AUTOMOTIVE',	'8',	'GERMANY'	,'EUROPE'),
+('E057',	'Dorothy',	'Wilson',	'F',	'SENIOR DATA SCIENTIST'	,'HEALTHCARE',	'9',	'USA',	'NORTH AMERICA'),
+('E010',	'William',	'Butler','M',	'LEAD DATA SCIENTIST',	'AUTOMOTIVE',	'12'	,'FRANCE'	,'EUROPE'),
+('E478',	'David',	'Smith',	'M',	'ASSOCIATE DATA SCIENTIST',	'RETAIL',	'3',	'COLOMBIA',	'SOUTH AMERICA'),
+('E005','Eric'	,'Hoffman',	'M'	,'LEAD DATA SCIENTIST'	,'FINANCE',	'11'	,'USA',	'NORTH AMERICA'),
+('E052',	'Dianna',	'Wilson',	'F',	'SENIOR DATA SCIENTIST',	'HEALTHCARE',	'6'	,'CANADA','NORTH AMERICA'),
+('E505',	'Chad',	'Wilson','M',	'ASSOCIATE DATA SCIENTIST',	'HEALTHCARE',	'5'	,'CANADA'	,'NORTH AMERICA'),
+('E532'	,'Claire',	'Brennan',	'F',	'ASSOCIATE DATA SCIENTIST',	'AUTOMOTIVE',	'3',	'GERMANY',	'EUROPE');
+
+create table EMP_PERFORMANCE.emp_record_table (EMP_ID varchar(100),	FIRST_NAME varchar(100), LAST_NAME varchar(100), GENDER varchar(100), ROLES varchar(100),	DEPT varchar(100),	EXP varchar(100),	COUNTRY varchar(100),	CONTINENT varchar(100),	SALARY varchar(100),	EMP_RATING varchar(100),	MANAGER_ID varchar(100));
+insert into EMP_PERFORMANCE.emp_record_table value
+('E260',	'Roy',	'Collins',	'M',	'SENIOR DATA SCIENTIST',	'RETAIL',	'7',	'INDIA',	'ASIA',	'7000',	'3',	'E583'),
+('E245',	'Nian',	'Zhen',	'M',	'SENIOR DATA SCIENTIST',	'RETAIL',	'6',	'CHINA',	'ASIA',	'6500',	'2',	'E583'),
+('E620',	'Katrina',	'Allen',	'F',	'JUNIOR DATA SCIENTIST',	'RETAIL',	'2',	'INDIA',	'ASIA',	'3000',	'1',	'E612'),
+('E640',	'Jenifer',	'Jhones',	'F',	'JUNIOR DATA SCIENTIST',	'RETAIL',	'1',	'COLOMBIA',	'SOUTH AMERICA',	'2800',	'4',	'E612'),
+('E403',	'Steve',	'Hoffman',	'M',	'ASSOCIATE DATA SCIENTIST',	'FINANCE',	'4',	'USA',	'NORTH AMERICA',	'5000',	'3',	'E103'),
+('E204',	'Karene',	'Nowak',	'F',	'SENIOR DATA SCIENTIST',	'AUTOMOTIVE',	'8',	'GERMANY',	'EUROPE',	'7500',	'5',	'E428'),
+('E057',	'Dorothy',	'Wilson',	'F',	'SENIOR DATA SCIENTIST',	'HEALTHCARE',	'9',	'USA',	'NORTH AMERICA',	'7700',	'1',	'E083'),
+('E010',	'William',	'Butler',	'M',	'LEAD DATA SCIENTIST',	'AUTOMOTIVE',	'12',	'FRANCE',	'EUROPE',	'9000',	'2',	'E428'),
+('E478',	'David',	'Smith',	'M',	'ASSOCIATE DATA SCIENTIST',	'RETAIL',	'3',	'COLOMBIA',	'SOUTH AMERICA',	'4000',	'4',	'E583'),
+('E005',	'Eric',	'Hoffman',	'M',	'LEAD DATA SCIENTIST',	'FINANCE',	'11',	'USA',	'NORTH AMERICA',	'8500',	'3',	'E103'),
+('E052',	'Dianna',	'Wilson',	'F',	'SENIOR DATA SCIENTIST',	'HEALTHCARE',	'6',	'CANADA',	'NORTH AMERICA',	'5500',	'5',	'E083'),
+('E505',	'Chad',	'Wilson',	'M',	'ASSOCIATE DATA SCIENTIST',	'HEALTHCARE',	'5',	'CANADA',	'NORTH AMERICA',	'5000',	'2',	'E083'),
+('E532',	'Claire',	'Brennan',	'F',	'ASSOCIATE DATA SCIENTIST',	'AUTOMOTIVE',	'3',	'GERMANY',	'EUROPE',	'4300',	'1',	'E428'),
+('E083',	'Patrick',	'Voltz',	'M',	'MANAGER',	'HEALTHCARE',	'15',	'USA',	'NORTH AMERICA',	'9500',	'5',	'E001'),
+('E583',	'Janet',	'Hale',	'F',	'MANAGER',	'RETAIL',	'14',	'COLOMBIA',	'SOUTH AMERICA',	'10000',	'2',	'E001'),
+('E103',	'Emily',	'Grove',	'F',	'MANAGER',	'FINANCE',	'14',	'CANADA',	'NORTH AMERICA',	'10500',	'4',	'E001'),
+('E612',	'Tracy',	'Norris',	'F',	'MANAGER',	'RETAIL',	'13',	'INDIA',	'ASIA',	'8500',	'4',	'E001'),
+('E428',	'Pete',	'Allen',	'M',	'MANAGER',	'AUTOMOTIVE',	'14',	'GERMANY',	'EUROPE',	'11000',	'4',	'E001'),
+('E001',	'Arthur',	'Black',	'M',	'PRESIDENT',	'ALL',	'20',	'USA',	'NORTH AMERICA',	'16500',	'5',	'E001');
+
+
+SELECT EMP_ID, FIRST_NAME, LAST_NAME, GENDER, DEPT
+FROM EMP_PERFORMANCE.emp_record_table ;
+
+
+SELECT EMP_ID, FIRST_NAME, LAST_NAME, GENDER, DEPT,EMP_RATING
+FROM EMP_PERFORMANCE.emp_record_table 
+WHERE  EMP_RATING < 2 ;
+
+
+SELECT EMP_ID, FIRST_NAME, LAST_NAME, GENDER, DEPT,EMP_RATING
+FROM EMP_PERFORMANCE.emp_record_table 
+WHERE  EMP_RATING > 4 ;
+
+
+SELECT EMP_ID, FIRST_NAME, LAST_NAME, GENDER, DEPT,EMP_RATING
+FROM EMP_PERFORMANCE.emp_record_table 
+WHERE  EMP_RATING between 2 AND 4 ;
+
+
+SELECT CONCAT (FIRST_NAME,' ',LAST_NAME)AS NAME
+FROM EMP_PERFORMANCE.emp_record_table
+
+
+SELECT *
+FROM EMP_PERFORMANCE.emp_record_table
+WHERE ROLES = 'MANAGER'OR  ROLES ='PRESIDENT'
+
+
+SELECT *
+FROM EMP_PERFORMANCE.emp_record_table
+WHERE ROLES NOT IN ('MANAGER','PRESIDENT')
+
+
+SELECT *
+FROM EMP_PERFORMANCE.emp_record_table
+WHERE DEPT='HEALTHCARE' OR  DEPT='FINANCE';
+
+
+SELECT ROLES, MIN(SALARY) AS minimum_salary 
+FROM EMP_PERFORMANCE.emp_record_table
+group by roles
+
+SELECT ROLES, MAX(SALARY) AS minimum_salary 
+FROM EMP_PERFORMANCE.emp_record_table
+group by roles
+
+SELECT *, 
+dense_rank()OVER(ORDER BY EMP_RATING desc ) as EMP_RANKS
+FROM EMP_PERFORMANCE.emp_record_table;
+
+select * 
+FROM EMP_PERFORMANCE.emp_record_table
+WHERE SALARY > 6000
+order by COUNTRY DESC;
+
+select * 
+FROM EMP_PERFORMANCE.emp_record_table
+WHERE EXP IN (SELECT EXP FROM EMP_PERFORMANCE.emp_record_table WHERE EXP > 10 );
+
+DELIMITER //
+CREATE PROCEDURE EXP_MORETHAN_3YEARS()
+BEGIN
+SELECT *
+FROM EMP_PERFORMANCE.emp_record_table
+WHERE EXP > 3;
+END //
+DELIMITER ;
+CALL EXP_MORETHAN_3YEARS()
+
+CREATE INDEX IDX_FIRSTNAME
+ON  EMP_PERFORMANCE.emp_record_table (FIRST_NAME);
+SHOW INDEXES FROM  EMP_PERFORMANCE.emp_record_table;
+EXPLAIN
+SELECT *
+FROM EMP_PERFORMANCE.emp_record_table
+WHERE FIRST_NAME= 'ERIC';
+
+SELECT* , (5 * SALARY/100 * EMP_RATING) AS BONUS
+FROM EMP_PERFORMANCE.emp_record_table
+
+SELECT COUNTRY,AVG(SALARY) AS AVG_SALARY
+FROM EMP_PERFORMANCE.emp_record_table
+group by COUNTRY;
+SELECT CONTINENT ,AVG(SALARY) AS AVG_SALARY
+FROM EMP_PERFORMANCE.emp_record_table
+group by  CONTINENT
+
+
+DELIMITER //
+ 
+create function  expe_roles( EXP VARCHAR(100) )
+RETURNS VARCHAR(100) DETERMINISTIC
+BEGIN
+DECLARE expe_roles varchar(100);
+IF EXP <= 2 THEN SET expe_roles = 'ASSOCIATE DATA SCIENTIST';
+ELSEIF EXP BETWEEN 2 AND 5  THEN SET expe_roles = 'ASSOCIATE DATA SCIENTIST';
+ELSEIF EXP BETWEEN 5 AND 10  THEN SET expe_roles= 'SENIOR DATA SCIENTIST';
+ELSEIF EXP BETWEEN 10 AND 12  THEN SET expe_roles = 'LEAD DATA SCIENTIST';
+ELSEIF EXP BETWEEN 12 AND 16  THEN SET expe_roles = 'MANAGER';
+END IF;
+RETURN (expe_roles);
+END //
+DELIMITER ;
+
+select *,expe_roles(EXP)
+FROM EMP_PERFORMANCE.emp_record_table;
+
+*/
